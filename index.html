@@ -3,72 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pour Mon Chéri</title>
+    <title>Surprise pour Mon Chéri</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffe6f2;
+            background: linear-gradient(45deg, #8B0000, #FF0000);
+            color: white;
             padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         h1 {
-            color: #d63384;
+            color: #FFB6C1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         #words {
             display: none;
             font-size: 20px;
-            color: #333;
+            color: white;
             margin-top: 20px;
-            text-align: left;
+            text-align: center;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            padding: 10px;
+            line-height: 1.5;
         }
         button {
-            background-color: #ff4081;
+            background-color: #FF1493;
             color: white;
             font-size: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             cursor: pointer;
             border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
         button:hover {
-            background-color: #e91e63;
+            background-color: #C71585;
+            transform: scale(1.1);
+        }
+        .fadeInWord {
+            opacity: 0;
+            animation: fadeInWord 1s ease-in forwards;
+        }
+        @keyframes fadeInWord {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <h1>Es-tu prêt pour une pluie d’amour ?</h1>
+    <h1>Mon amour, es-tu prêt pour une surprise ?</h1>
     <button onclick="showWords()">PRÊT</button>
     <div id="words"></div>
 
     <script>
         function showWords() {
             let words = [
-                "Mon chéri", "Mon amour", "Mon cœur", "Mon trésor", "Mon ange", "Mon roi", "Mon soleil", 
-                "Mon étoile", "Mon bonheur", "Ma vie", "Ma douceur", "Mon diamant", "Mon paradis", "Mon rêve", 
+                "Mon bébé d'amour","Mon chéri", "Mon amour", "Mon cœur", "Mon trésor", "Mon ange", "Mon roi", "Mon soleil", 
+                "Mon étoile", "Mon bonheur", "Ma vie", "Mon diamant", "Mon paradis", "Mon rêve", 
                 "Mon univers", "Mon prince", "Mon câlin", "Ma tendresse", "Ma passion", "Mon souffle", "Mon bijou",
-                "Mon monde", "Mon oxygène", "Mon arc-en-ciel", "Mon poème", "Mon sourire", "Mon bien-aimé", "Ma perle",
+                "Mon monde", "Mon oxygène", "Mon arc-en-ciel", "Mon poème", "Mon sourire", "Mon bien-aimé",
                 "Mon héros", "Mon destin", "Mon miracle", "Mon trésor caché", "Mon amour éternel", "Mon tout",
-                "Ma raison de vivre", "Ma lumière", "Mon essentiel", "Mon chevalier", "Mon feu d'artifice", "Mon bonheur absolu",
+                "Mon essentiel", "Mon chevalier", "Mon feu d'artifice", "Mon bonheur absolu",
                 "Mon étoile filante", "Mon câlin du matin", "Mon rêve éveillé", "Mon refuge", "Mon ange gardien",
-                "Mon jardin secret", "Mon trésor perdu", "Mon évasion", "Mon inspiration", "Ma mélodie",
-                "Mon frisson", "Mon battement de cœur", "Mon éclat de rire", "Mon doux murmure", "Ma plus belle aventure",
-                "Mon évidence", "Ma plus belle histoire", "Mon instant magique", "Mon idéal", "Mon désir ardent",
-                "Mon adoré", "Mon unique", "Ma perle rare", "Mon joyau", "Mon doux rêve", "Mon éclat", "Mon feu ardent",
-                "Mon prince charmant", "Mon souffle de vie", "Mon havre de paix", "Ma douce étoile", "Mon câlin du soir",
-                "Mon espoir", "Mon ravissement", "Mon infini", "Mon charme secret", "Mon beau mystère", "Ma douce obsession",
-                "Mon éternité", "Mon frisson de bonheur", "Mon bel amour", "Mon soleil couchant", "Mon matin radieux",
-                "Mon arc lumineux", "Ma plus belle note", "Mon instant volé", "Mon rêve absolu", "Ma passion brûlante",
-                "Mon tourbillon d’amour", "Mon murmure tendre", "Mon éclat d'étoile", "Mon poème vivant", "Ma belle rencontre",
-                "Mon doux refuge", "Mon océan de tendresse", "Mon intime secret", "Mon enchantement", "Mon irrésistible",
-                "Mon élixir d'amour", "Mon battement d'âme", "Mon délice éternel", "Mon reflet enchanté", "Mon tendre murmure",
-                "Mon miracle quotidien", "Mon trésor caché", "Mon infime bonheur", "Mon souffle ardent", "Mon rêve éveillé",
-                "Mon instant précieux", "Mon univers intime", "Mon destin écrit", "Mon parfum d'amour", "Mon oasis secrète",
-                "Mon doux frisson", "Mon rayon de lune", "Mon vent de liberté", "Ma perle de rosée", "Mon cœur battant",
-                "Mon plus grand bonheur", "Mon inoubliable", "Mon poème d’amour"
+                "Mon guerrier", "Mon roc", "Mon tigre", "Mon loup", "Mon protecteur", "Mon champion",
+                "Mon conquérant", "Mon chevalier servant", "Mon pilier", "Mon idole", "Mon soutien",
+                "Mon brave", "Mon aventurier", "Mon phoenix", "Mon étoile polaire", "Mon viking",
+                "Mon éclat de force", "Mon audacieux", "Mon roi des cieux", "Mon pirate", "Mon lion",
+                "Mon invincible", "Mon stratège", "Mon légendaire", "Mon roi du monde", "Mon samouraï",
+                "Mon sage", "Mon géant", "Mon maître du jeu", "Mon héros de toujours", "Mon faucon",
+                "Mon monarque", "Mon magicien", "Mon roi des étoiles", "Mon fidèle", "Mon sergent",
+                "Mon leader", "Mon audacieux combattant", "Mon irrésistible", "Mon insoumis",
+                "Mon charmeur", "Mon infatigable", "Mon audacieux guerrier", "Mon inégalable",
+                "Mon étoile du matin", "Mon preux chevalier", "Mon étoile brillante", "Mon maître du temps",
+                "Mon vaillant", "Mon fier combattant", "Mon stratège ultime", "Mon chef de meute"
             ];
             
             let wordsContainer = document.getElementById("words");
@@ -78,6 +91,8 @@
                 setTimeout(() => {
                     let para = document.createElement("p");
                     para.textContent = word + " ❤️ ";
+                    para.classList.add("fadeInWord");
+                    para.style.animationDelay = `${index * 0.1}s`;
                     wordsContainer.appendChild(para);
                 }, index * 100);
             });
