@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise pour Mon Chéri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding: 50px;
+        }
+        h1 {
+            color: #d63384;
+        }
+        #words {
+            display: none;
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mon amour, es-tu prêt pour une surprise ?</h1>
+    <button onclick="showWords()">PRÊT</button>
+    <div id="words"></div>
+
+    <script>
+        function showWords() {
+            let words = [
+                "Mon chéri", "Mon amour", "Mon cœur", "Mon trésor", "Mon ange", "Mon roi", "Mon soleil", 
+                "Mon étoile", "Mon bonheur", "Ma vie", "Ma douceur", "Mon diamant", "Mon paradis", "Mon rêve", 
+                "Mon univers", "Mon prince", "Mon câlin", "Ma tendresse", "Ma passion", "Mon souffle", "Mon bijou",
+                "Mon monde", "Mon oxygène", "Mon arc-en-ciel", "Mon poème", "Mon sourire", "Mon bien-aimé", "Ma perle",
+                "Mon héros", "Mon destin", "Mon miracle", "Mon trésor caché", "Mon amour éternel", "Mon tout" 
+            ];
+            
+            // Générer les mots restants jusqu'à 446
+            for (let i = words.length; i < 446; i++) {
+                words.push("Mon amour" + (i+1));
+            }
+            
+            let wordsContainer = document.getElementById("words");
+            wordsContainer.innerHTML = "";
+            wordsContainer.style.display = "block";
+            words.forEach((word, index) => {
+                setTimeout(() => {
+                    wordsContainer.innerHTML += word + " ❤️ ";
+                    if ((index + 1) % 10 === 0) wordsContainer.innerHTML += "<br>"; 
+                }, index * 100);
+            });
+        }
+    </script>
+</body>
+</html>
