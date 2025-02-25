@@ -19,6 +19,10 @@
             font-size: 20px;
             color: #333;
             margin-top: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         button {
             background-color: #ff4081;
@@ -46,12 +50,16 @@
                 "Mon étoile", "Mon bonheur", "Ma vie", "Ma douceur", "Mon diamant", "Mon paradis", "Mon rêve", 
                 "Mon univers", "Mon prince", "Mon câlin", "Ma tendresse", "Ma passion", "Mon souffle", "Mon bijou",
                 "Mon monde", "Mon oxygène", "Mon arc-en-ciel", "Mon poème", "Mon sourire", "Mon bien-aimé", "Ma perle",
-                "Mon héros", "Mon destin", "Mon miracle", "Mon trésor caché", "Mon amour éternel", "Mon tout" 
+                "Mon héros", "Mon destin", "Mon miracle", "Mon trésor caché", "Mon amour éternel", "Mon tout",
+                "Ma raison de vivre", "Ma lumière", "Mon essentiel", "Mon chevalier", "Mon feu d'artifice", "Mon bonheur absolu",
+                "Mon étoile filante", "Mon câlin du matin", "Mon rêve éveillé", "Mon refuge", "Mon ange gardien",
+                "Mon jardin secret", "Mon trésor perdu", "Mon évasion", "Mon inspiration", "Ma mélodie",
+                "Mon frisson", "Mon battement de cœur", "Mon éclat de rire", "Mon doux murmure", "Ma plus belle aventure",
+                "Mon évidence", "Ma plus belle histoire", "Mon instant magique", "Mon idéal", "Mon désir ardent"
             ];
             
-            // Générer les mots restants jusqu'à 446
-            for (let i = words.length; i < 446; i++) {
-                words.push("Mon amour" + (i+1));
+            while (words.length < 446) {
+                words.push("Mon amour éternel" + (words.length + 1));
             }
             
             let wordsContainer = document.getElementById("words");
@@ -59,8 +67,9 @@
             wordsContainer.style.display = "block";
             words.forEach((word, index) => {
                 setTimeout(() => {
-                    wordsContainer.innerHTML += word + " ❤️ ";
-                    if ((index + 1) % 10 === 0) wordsContainer.innerHTML += "<br>"; 
+                    let para = document.createElement("p");
+                    para.textContent = word + " ❤️ ";
+                    wordsContainer.appendChild(para);
                 }, index * 100);
             });
         }
